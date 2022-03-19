@@ -61,7 +61,7 @@ export class AppService {
         if (this.response.children && this.response.children.length > 0) {
           childrenArr = this.response.children;
         }
-        const resJson = (({ children, ...o }) => o)(this.response)
+        const resJson = (({ children, connectionInfo, ...o }) => o)(this.response)
         this.confidanceData.push(resJson);
         if (childrenArr.length > 0) {
           this.getChildConfidenceData(parentType, paranetConf, childrenArr, confidence);
