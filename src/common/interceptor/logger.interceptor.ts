@@ -2,6 +2,10 @@ import { LoggerService } from './../services/logger/logger.service';
 import { CallHandler, ExecutionContext, Injectable, NestInterceptor, Module } from '@nestjs/common';
 import { Observable, tap } from 'rxjs';
 
+
+/**
+* @description LoggerInterceptor use to log all details of incoming request and outgoing response.
+*/
 @Injectable()
 export class LoggerInterceptor implements NestInterceptor {
 

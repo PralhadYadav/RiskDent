@@ -2,20 +2,42 @@ import { LoggerService } from './common/services/logger/logger.service';
 import { Injectable } from '@nestjs/common';
 import { sample_response } from './common/constants/sample_response'
 @Injectable()
+
+/**
+ * @description Appservice use to return api requests response data
+ */
 export class AppService {
 
+
+  /**
+   * @description response use to hold the transactionid data
+   */
   response;
+
+  /**
+ * @description confidanceData use to hold the final result with confidence param check.
+ */
   confidanceData = [];
 
+  /**
+* @description loggerService use to log all the error or logs.
+*/
   private readonly loggerService: LoggerService = new LoggerService(AppService.name)
 
   constructor() {
 
   }
+
+  /**
+* @description getHello method use to define default route.
+*/
   getHello(): string {
-    return 'Hello transactions!';
+    return 'Hello Fraud Detector!';
   }
 
+  /**
+* @description getTransactionDetails method is first method get called when transactions api get called.
+*/
   getTransactionDetails(requestId, confidence) {
     try {
       this.response = '';
@@ -57,7 +79,9 @@ export class AppService {
 
   }
 
-
+  /**
+* @description getTransactions method is recursive function which check all childern transaction and find matching one.
+*/
   getTransactions(childArray, id) {
     try {
       if (childArray && childArray.length > 0) {
@@ -80,6 +104,9 @@ export class AppService {
 
   }
 
+  /**
+* @description getChildConfidenceData method is recursive function which check for confidence params over the previous response of matching transaction id param.
+*/
   getChildConfidenceData(parentType = [], parentConf = null, childArr, confidence) {
     try {
       for (let child of childArr) {
