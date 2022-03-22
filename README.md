@@ -29,9 +29,6 @@ $ npm run start:prod
 # unit tests
 $ npm run test
 
-# e2e tests
-$ npm run test:e2e
-
 # test coverage
 $ npm run test:cov
 ```
@@ -43,6 +40,6 @@ $ npm run test:cov
 # Auto created documentation
 $ npm run doc
 
-DOcumentation file is not hosted. Run this command locally and open index.html file from documentation folder.
+Documentation file is not hosted. Run this command locally and open index.html file from documentation folder.
 
 ```
