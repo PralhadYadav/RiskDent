@@ -17,7 +17,7 @@ export class AppController {
   }
 
   /**
-* @description getTransactions is transactions router which will return response based on transactionId & confidenceLevel route params.
+* @description getTransactions is transactions route which will return response based on transactionId & confidenceLevel route params.
 */
   @Get('transactions')
   getTransactions(@Query('transactionId') transactionId: string,
