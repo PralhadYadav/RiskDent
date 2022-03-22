@@ -1,3 +1,7 @@
+
+/**
+* @description AppServiceMock class is use in unit testing to mock api responses.
+*/
 export class AppServiceMock {
 
     getHello() {
